@@ -193,10 +193,16 @@
     <Compile Include="Models\ViewModels\RegisterViewModel.cs" />
     <Compile Include="Models\ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="Models\ViewModels\SendCodeViewModel.cs" />
+    <Compile Include="Models\ViewModels\SendMailViewModel.cs" />
     <Compile Include="Models\ViewModels\SetPasswordViewModel.cs" />
     <Compile Include="Models\ViewModels\VerifyCodeViewModel.cs" />
     <Compile Include="Models\ViewModels\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -377,6 +383,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202310031758353_Init.resx">
       <DependentUpon>202310031758353_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
