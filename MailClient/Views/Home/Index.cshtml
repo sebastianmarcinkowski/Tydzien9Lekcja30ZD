@@ -14,7 +14,7 @@
 
     <div class="col-12">
 
-        @using (Html.BeginForm("SendMail", "Home"))
+        @using (Html.BeginForm("SendMail", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 
@@ -44,6 +44,11 @@
                 @Html.TextAreaFor(x => x.Content,
                     new { @class = "form-control" })
                 @Html.ValidationMessageFor(x => x.Content)
+            </div>
+
+            <div class="form-group mb-4">
+                @Html.Label("AddAtachment", "Dodaj załącznik") <br />
+                @Html.TextBox("attachment", "", new { type = "file" })
             </div>
 
             <button class="btn btn-primary btn-lg mb-5" type="submit">

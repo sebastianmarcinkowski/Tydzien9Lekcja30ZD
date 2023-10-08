@@ -2,8 +2,10 @@
 using MailClient.Models.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MailClient.Controllers
@@ -21,7 +23,7 @@ namespace MailClient.Controllers
 			return View();
 		}
 
-		public async Task<ActionResult> SendMail(SendMailViewModel model)
+		public async Task<ActionResult> SendMail(SendMailViewModel model, HttpPostedFileBase attachment)
 		{
 			if (!ModelState.IsValid)
 				return View("Index", model);
@@ -32,7 +34,7 @@ namespace MailClient.Controllers
 
 				foreach (var recipment in recipients)
 				{
-					await _email.Send(model.SenderName, model.Title, model.Content, recipment);
+					await _email.Send(model.SenderName, model.Title, model.Content, recipment, attachment);
 				}
 
 				TempData["message"] = Resources.Messages.SendMailConfirmation;
