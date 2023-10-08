@@ -11,6 +11,7 @@ namespace MailClient.Controllers
 	[Authorize]
 	public class HomeController : Controller
 	{
+		private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 		Email _email = new Email(Startup.EmailConfiguration);
 
 		public ActionResult Index()
@@ -38,7 +39,12 @@ namespace MailClient.Controllers
 			}
 			catch (Exception error)
 			{
-				// Error logging...
+				Logger.Error(
+					error,
+					"USER:" +
+					User.Identity.Name +
+					"|" +
+					error.Message);
 
 				TempData["message"] = Resources.Messages.SendMailError;
 

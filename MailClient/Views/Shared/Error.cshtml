@@ -1,9 +1,9 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 
 @{
-    ViewBag.Title = "Error";
+    ViewBag.Title = "Nieoczekiwany błąd";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">@ViewBag.Title</h1>
+<h4>Wystąpił nieoczekiwany błąd, w razie dalszych problemów skontaktuj się z administratorem.</h4>
 
