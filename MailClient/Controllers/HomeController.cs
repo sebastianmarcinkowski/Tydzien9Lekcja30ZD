@@ -1,5 +1,7 @@
 ﻿using EmailSender;
+using MailClient.Models.Repositories;
 using MailClient.Models.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +16,8 @@ namespace MailClient.Controllers
 	public class HomeController : Controller
 	{
 		private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
-		Email _email = new Email(Startup.EmailConfiguration);
+		private static readonly Email _email = new Email(Startup.EmailConfiguration);
+		private static readonly MailRepository _mailRepository = new MailRepository();
 
 		public ActionResult Index()
 		{
@@ -36,6 +39,14 @@ namespace MailClient.Controllers
 				{
 					await _email.Send(model.SenderName, model.Title, model.Content, recipment, attachment);
 				}
+
+				var attachmentName = attachment != null ?
+					Path.GetFileName(attachment.FileName) :
+					"brak załącznika";
+
+				var userId = User.Identity.GetUserId();
+
+				_mailRepository.Add(userId, model.SenderName, model.To, model.Title, model.Content, attachmentName);
 
 				TempData["message"] = Resources.Messages.SendMailConfirmation;
 			}
