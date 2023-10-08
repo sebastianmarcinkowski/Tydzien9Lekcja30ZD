@@ -362,6 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Web.config
-*/MailClient/Web.Debug.config
-*/MailClient/Web.Relase.config
+# Mail.config
+MailClient/Mail.config

@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="SendMailConfirmation" xml:space="preserve">
-    <value>&lt;p class="alert alert-success mt-4 mb-3"&gt;Wiadomość została wysłana pomyślnie!&lt;/p&gt;</value>
+  <data name="AccountLoginHeader" xml:space="preserve">
+    <value>Zaloguj się</value>
   </data>
-  <data name="SendMailError" xml:space="preserve">
-    <value>&lt;p class="alert alert-danger mt-4 mb-3"&gt;Wystąpił błąd, wiadomość nie została wysłana!&lt;/p&gt;</value>
+  <data name="AccountRegisterHeader" xml:space="preserve">
+    <value>Zarejestruj się</value>
+  </data>
+  <data name="HomeIndexHeader" xml:space="preserve">
+    <value>Wyślij wiadomość e-mail</value>
   </data>
 </root>

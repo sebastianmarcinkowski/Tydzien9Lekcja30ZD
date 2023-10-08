@@ -30,8 +30,11 @@ namespace EmailSender
 			_senderName = emailParams.SenderName;
 		}
 
-		public async Task Send(string subject, string body, string to)
+		public async Task Send(string senderName, string subject, string body, string to)
 		{
+			if (senderName.Length > 0)
+				_senderName = senderName;
+
 			_mail = new MailMessage();
 			_mail.SubjectEncoding = Encoding.UTF8;
 			_mail.BodyEncoding = Encoding.UTF8;

@@ -52,7 +52,10 @@ namespace MailClient.Controllers
 		[AllowAnonymous]
 		public ActionResult Login(string returnUrl)
 		{
+			ViewBag.Title = Resources.Titles.AccountLoginHeader;
+
 			ViewBag.ReturnUrl = returnUrl;
+
 			return View();
 		}
 
@@ -119,6 +122,8 @@ namespace MailClient.Controllers
 		[AllowAnonymous]
 		public ActionResult Register()
 		{
+			ViewBag.Title = Resources.Titles.AccountRegisterHeader;
+
 			return View();
 		}
 

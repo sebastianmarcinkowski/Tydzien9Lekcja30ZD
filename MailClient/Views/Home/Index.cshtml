@@ -1,8 +1,5 @@
-﻿@model MailClient.Models.ViewModels.SendMailViewModel
-
-@{
-    ViewBag.Title = "Wyślij wiadomość e-mail";
-}
+﻿@using System.Runtime.Versioning
+@model MailClient.Models.ViewModels.SendMailViewModel
 
 <h1>@ViewBag.Title</h1>
 
@@ -50,7 +47,7 @@
             </div>
 
             <button class="btn btn-primary btn-lg mb-5" type="submit">
-                Wyślij
+                <i class="fas fa-paper-plane"></i> Wyślij
             </button>
         }
 

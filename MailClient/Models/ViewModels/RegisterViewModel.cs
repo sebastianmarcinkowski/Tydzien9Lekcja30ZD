@@ -4,20 +4,20 @@ namespace MailClient.Models
 {
 	public class RegisterViewModel
 	{
-		[Required]
-		[EmailAddress]
-		[Display(Name = "Email")]
+		[Required(ErrorMessage = "Pole E-mail jest wymagane.")]
+		[EmailAddress(ErrorMessage = "Wprowadzony E-mail jest niepoprawny.")]
+		[Display(Name = "E-mail")]
 		public string Email { get; set; }
 
-		[Required]
-		[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+		[Required(ErrorMessage = "Pole Hasło jest wymagane.")]
+		[StringLength(100, ErrorMessage = "{0} musi posiadać co najmniej {2} znaków.", MinimumLength = 6)]
 		[DataType(DataType.Password)]
-		[Display(Name = "Password")]
+		[Display(Name = "Hasło")]
 		public string Password { get; set; }
 
 		[DataType(DataType.Password)]
-		[Display(Name = "Confirm password")]
-		[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+		[Display(Name = "Potwierdź hasło")]
+		[Compare("Password", ErrorMessage = "Hasła się nie zgadzają.")]
 		public string ConfirmPassword { get; set; }
 	}
 }

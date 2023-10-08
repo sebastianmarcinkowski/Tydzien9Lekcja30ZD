@@ -25,33 +25,30 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <ul class="navbar-nav mr-auto">
+
                     <li class="nav-item active">
                         @Html.ActionLink("Strona główna", "Index", "Home", null, new { @class = "nav-link" })
                     </li>
 
-                    @if (Request.IsAuthenticated)
-                    {
-                    }
-
-                    <li class="nav-item active">
-                        @Html.ActionLink("O mnie", "About", "Home", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item active">
-                        @Html.ActionLink("Kontakt", "Contact", "Home", null, new { @class = "nav-link" })
-                    </li>
                 </ul>
+
                 @Html.Partial("_LoginPartial")
+
             </div>
         </div>
 
     </nav>
 
     <div class="container body-content">
+
         @RenderBody()
+
         <footer>
             <p>&copy; @DateTime.Now.Year - MailClient</p>
         </footer>
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")

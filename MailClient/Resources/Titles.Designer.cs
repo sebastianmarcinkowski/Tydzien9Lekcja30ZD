@@ -22,14 +22,14 @@ namespace MailClient.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Messages {
+    internal class Titles {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Messages() {
+        internal Titles() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MailClient.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MailClient.Resources.Messages", typeof(Messages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MailClient.Resources.Titles", typeof(Titles).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,29 @@ namespace MailClient.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p class=&quot;alert alert-success mt-4 mb-3&quot;&gt;Wiadomość została wysłana pomyślnie!&lt;/p&gt;.
+        ///   Looks up a localized string similar to Zaloguj się.
         /// </summary>
-        internal static string SendMailConfirmation {
+        internal static string AccountLoginHeader {
             get {
-                return ResourceManager.GetString("SendMailConfirmation", resourceCulture);
+                return ResourceManager.GetString("AccountLoginHeader", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p class=&quot;alert alert-danger mt-4 mb-3&quot;&gt;Wystąpił błąd, wiadomość nie została wysłana!&lt;/p&gt;.
+        ///   Looks up a localized string similar to Zarejestruj się.
         /// </summary>
-        internal static string SendMailError {
+        internal static string AccountRegisterHeader {
             get {
-                return ResourceManager.GetString("SendMailError", resourceCulture);
+                return ResourceManager.GetString("AccountRegisterHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wyślij wiadomość e-mail.
+        /// </summary>
+        internal static string HomeIndexHeader {
+            get {
+                return ResourceManager.GetString("HomeIndexHeader", resourceCulture);
             }
         }
     }
