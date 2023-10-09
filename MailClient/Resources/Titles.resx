@@ -126,4 +126,10 @@
   <data name="HomeIndexHeader" xml:space="preserve">
     <value>Wyślij wiadomość e-mail</value>
   </data>
+  <data name="HomeMailHistoryHeader" xml:space="preserve">
+    <value>Historia wysłanych wiadomości</value>
+  </data>
+  <data name="HomeMailPreviewHeader" xml:space="preserve">
+    <value>Pogdląd wysłanej wiadomości</value>
+  </data>
 </root>

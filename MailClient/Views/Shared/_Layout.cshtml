@@ -32,6 +32,13 @@
                         @Html.ActionLink("Strona główna", "Index", "Home", null, new { @class = "nav-link" })
                     </li>
 
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="nav-item active">
+                            @Html.ActionLink("Historia", "MailHistory", "Home", null, new { @class = "nav-link" })
+                        </li>
+                    }
+
                 </ul>
 
                 @Html.Partial("_LoginPartial")
@@ -53,6 +60,36 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
+    <div class="privacyPolicyInfo" style="display: none;">
+        Serwis wykorzystuje pliki cookies, korzystając ze strony wyrażasz zgodę na wykorzystanie plików cookies.
+        <button onclick="closePrivacyPolicy()"
+                type="button"
+                class="btn btn-light btn-sm mx-3 my-1 privacyPolicyButton">
+            Ok, rozumiem
+        </button>
+    </div>
+
+    <script>
+
+        function closePrivacyPolicy() {
+
+            $('.privacyPolicyInfo').css("display", "none");
+
+            $.cookie("privacyPolicy", "1", { path: '/', expires: 365 });
+
+        }
+
+        $(document).ready(function () {
+
+            if ($.cookie("privacyPolicy") != "1")
+                $('.privacyPolicyInfo').css("display", "");
+
+        });
+
+    </script>
+
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

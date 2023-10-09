@@ -86,5 +86,23 @@ namespace MailClient.Resources {
                 return ResourceManager.GetString("HomeIndexHeader", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Historia wysłanych wiadomości.
+        /// </summary>
+        internal static string HomeMailHistoryHeader {
+            get {
+                return ResourceManager.GetString("HomeMailHistoryHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pogdląd wysłanej wiadomości.
+        /// </summary>
+        internal static string HomeMailPreviewHeader {
+            get {
+                return ResourceManager.GetString("HomeMailPreviewHeader", resourceCulture);
+            }
+        }
     }
 }

@@ -76,5 +76,23 @@ namespace MailClient.Controllers
 				.Distinct()
 				.ToList();
 		}
+
+		public ActionResult MailHistory()
+		{
+			ViewBag.Title = Resources.Titles.HomeMailHistoryHeader;
+
+			var userId = User.Identity.GetUserId();
+
+			return View(_mailRepository.GetMails(userId));
+		}
+
+		public ActionResult MailPreview(Guid mailId)
+		{
+			ViewBag.Title = Resources.Titles.HomeMailPreviewHeader;
+
+			var userId = User.Identity.GetUserId();
+
+			return View(_mailRepository.GetMail(userId, mailId));
+		}
 	}
 }

@@ -1,0 +1,34 @@
+﻿@model MailClient.Models.Domains.MailEntity
+
+<h2>@ViewBag.Title</h2>
+
+<hr>
+
+<h4><strong>Nadawca</strong></h4>
+<p>@Model.SenderName</p>
+
+<hr>
+
+<h4><strong>Odbiorca / Odbiorcy</strong></h4>
+<p>@Model.To</p>
+
+<hr>
+
+<h4><strong>Tytuł</strong></h4>
+<p>@Model.Title</p>
+
+<hr>
+
+<h4><strong>Treść wiadomości</strong></h4>
+<p>@Model.Content</p>
+
+<hr>
+
+<h4><strong>Nazwa załącznika</strong></h4>
+<p>@Model.AttachmentName</p>
+
+<hr>
+
+<a href="@Url.Action("MailHistory", "Home")" class="btn btn-primary mt-3 mb-5">
+    <i class="fas fa-caret-left"></i> Powrót
+</a>
